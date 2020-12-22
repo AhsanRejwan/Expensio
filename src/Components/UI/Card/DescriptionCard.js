@@ -1,9 +1,9 @@
 import React from "react";
 import {Card} from "react-bootstrap";
-import './DescriptionCard.css'
+import classes from './DescriptionCard.module.css'
 
 export const DescriptionCard = (props) => (
-        <Card style={{ width: '18rem' }} className="DescriptionCard">
+        <Card style={{ width: '18rem' }} className={classes.DescriptionCard}>
             <Card.Body>
                 <Card.Title>{props.title}</Card.Title>
                 <Card.Text>

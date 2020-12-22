@@ -1,10 +1,10 @@
 import React from 'react';
-import {Auxiliary} from "../../Hoc/Auxiliary/Auxiliary";
 import {Toolbar} from "../Navigation/Toolbar/Toolbar";
+import classes from  './Layout.module.css'
 
 export const Layout = (props) => (
-    <Auxiliary>
+    <div className={classes.Layout}>
         <Toolbar/>
-        <main>{props.children}</main>
-    </Auxiliary>
+        <main className={classes.MainContent}>{props.children}</main>
+    </div>
 );

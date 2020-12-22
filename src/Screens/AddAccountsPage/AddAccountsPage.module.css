@@ -1,0 +1,11 @@
+.AddAccountsPage {
+    margin-top: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.AddAccountList {
+    margin-top: 100px;
+}

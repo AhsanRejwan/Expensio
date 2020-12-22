@@ -1,0 +1,7 @@
+.TableTemplate {
+    /*width: clamp(400px, 60vw, 800px) ;*/
+    width: 70vw;
+    min-width: 800px;
+    max-width: 1500px;
+}
+

@@ -1,0 +1,24 @@
+.Jumbotron {
+    background-color: #91A8A4;
+    text-align: center;
+    color: white;
+    height: 400px;
+    vertical-align: center;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Jumbotron button {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.HomePage{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+
+

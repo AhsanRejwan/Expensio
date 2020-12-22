@@ -1,21 +1,19 @@
-import React from 'react';
-import {Auxiliary} from "../../../Hoc/Auxiliary/Auxiliary";
-import {Button, Form, FormControl, Nav, Navbar} from "react-bootstrap";
+import React, {useState} from 'react';
+import {Nav, Navbar} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {NavLink} from "react-router-dom";
 
-export const Toolbar =(props) =>(
-    <Auxiliary>
-        <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">Expensio</Navbar.Brand>
-            <Nav className="mr-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#features">Balance Sheet</Nav.Link>
-                <Nav.Link href="#pricing" >Transaction History</Nav.Link>
-            </Nav>
-            <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button variant="outline-info">Search</Button>
-            </Form>
-        </Navbar>
-    </Auxiliary>
-);
+export const Toolbar = (props) => {
+    return (
+        <React.Fragment>
+            <Navbar bg="dark" variant="dark">
+                <Navbar.Brand href="/">Expensio</Navbar.Brand>
+                <Nav className="mr-auto">
+                    <NavLink to = {'/'} exact><Nav.Link href="/">Home</Nav.Link></NavLink>
+                    <NavLink to ={'/ManageFinances'}><Nav.Link href="/ManageFinances" >Manage Finances</Nav.Link></NavLink>
+                    <NavLink to = {'/TransactionHistory'}><Nav.Link href="/TransactionHistory" >Transaction History</Nav.Link></NavLink>
+                </Nav>
+            </Navbar>
+        </React.Fragment>
+    );
+}
