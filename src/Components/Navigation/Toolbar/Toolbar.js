@@ -11,7 +11,7 @@ export const Toolbar = (props) => {
                 <Nav className="mr-auto">
                     <NavLink to = {'/'} exact><Nav.Link href="/">Home</Nav.Link></NavLink>
                     <NavLink to ={'/ManageFinances'}><Nav.Link href="/ManageFinances" >Manage Finances</Nav.Link></NavLink>
-                    <NavLink to = {'/TransactionHistory'}><Nav.Link href="/TransactionHistory" >Transaction History</Nav.Link></NavLink>
+                    <NavLink to = {'/TransactionHistoryPage'}><Nav.Link href="/TransactionHistoryPage" >Transaction History</Nav.Link></NavLink>
                 </Nav>
             </Navbar>
         </React.Fragment>

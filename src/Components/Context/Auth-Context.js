@@ -15,6 +15,9 @@ export const AuthContextProvider = (props) => {
         setAccessToken(aToken);
         setRefreshToken(rToken);
         setUserId(userId);
+        // localStorage.setItem('access_token',aToken);
+        // localStorage.setItem('refresh_token',rToken);
+        // localStorage.set('userId',userId);
     }
     return(
         <AuthContext.Provider value={{userId: userId, accessToken: accessToken, refreshToken: refreshToken, login:loginHandler}}>

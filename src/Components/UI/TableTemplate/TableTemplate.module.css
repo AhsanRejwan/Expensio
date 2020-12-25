@@ -2,6 +2,22 @@
     /*width: clamp(400px, 60vw, 800px) ;*/
     width: 70vw;
     min-width: 800px;
-    max-width: 1500px;
+    max-width: 75vw;
 }
 
+.Table {
+    max-height: 700px;
+    overflow-y: scroll;
+}
+
+.Subtract {
+    color: red;
+}
+
+.Add {
+    color: greenyellow;
+}
+
+.Neutral {
+    color : lightgoldenrodyellow;
+}

@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import {Button, Form, Spinner} from "react-bootstrap";
-import {addFinanceAccount, signUp} from "../../../DataAccessManager/DataAccessManager";
+import {addOrUpdateFinanceAccount, signUp} from "../../../DataAccessManager/DataAccessManager";
 import {AuthContext} from "../../Context/Auth-Context";
 
 export const SignUpForm = (props) => {
@@ -23,8 +23,9 @@ export const SignUpForm = (props) => {
         {
             authContext.login(response.data.idToken, response.data.refreshToken,response.data.localId)
             props.history.push('/Accounts');
+            await  addOrUpdateFinanceAccount(response.data.localId, 'Cash','0')
         }
-        await  addFinanceAccount(response.data.localId, 'Cash','0')
+
     }
     let formSpinner = null;
     let formError = null;

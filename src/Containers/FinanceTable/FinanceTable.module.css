@@ -1,3 +1,28 @@
-.FinanceTable {
+.FinanceTableContainer {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    flex-direction: column;
+}
 
+.Table {
+    max-height: 700px;
+    overflow-y: scroll;
+}
+
+.PlusButton {
+    margin-left: 80vw;
+    position: fixed;
+
+}
+
+.ButtonPanel {
+    display: flex;
+    flex-direction: column;
+}
+
+.Buttons {
+    margin: 10px 0;
 }

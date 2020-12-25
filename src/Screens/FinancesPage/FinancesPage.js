@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import classes from './FinancesPage.module.css';
 
 import {AuthContext} from "../../Components/Context/Auth-Context";
@@ -10,21 +10,22 @@ import {FinanceTable} from "../../Containers/FinanceTable/FinanceTable";
 export const FinancesPage = (props) => {
     const authContext = useContext(AuthContext)
 
-
+    useEffect(()=>{
+        console.log(authContext.userId);
+    },[])
     return (
-        <div className={classes.FinancesPageContainer}>
+        <div >
 
             <ModalContainer show = {authContext.userId ===null ? true : false} handleClose = {()=>{props.history.push("/")}} title = {'You are not Signed in !!!'}>
                 <NavLink to = {'/'}><Button>Go Home</Button></NavLink>
             </ModalContainer>
 
-            <div className={classes.FinanceTable}>
-                <FinanceTable />
+            <div>
+                {authContext.userId !==null ? <FinanceTable /> : null}
             </div>
 
-            <div className={classes.ButtonPanel}>
-                button panel
-            </div>
+
+
         </div>
     )
 }

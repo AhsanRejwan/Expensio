@@ -23,10 +23,10 @@ export const HomePage = (props) => {
             </p>
         </Jumbotron>
 
-        <DescriptionCards arr={[{title: "Feature 1", text: "Description 1"}, {
-            title: "Feature 2",
-            text: "Description 2"
-        }, {title: "Feature 3", text: "Description 3"}]}/>
+        <DescriptionCards arr={[{title: "Track Expenses", text: "Record every expense and their purpose, know your expenditure and your savings :)"}, {
+            title: "Finance Summary",
+            text: "Track daily expense summary to know how much money you lost or gained per day."
+        }, {title: "View History", text: "See details about individual transactions"}]}/>
 
         <ModalContainer show ={showLoginModal} title = 'Log In to Expensio' handleClose = {() => {setShowLoginModal(prevState => !prevState)}}>
             <LoginForm {...props} handleClose = {() => {setShowLoginModal(prevState => !prevState)}}  />

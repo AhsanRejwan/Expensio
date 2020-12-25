@@ -23,7 +23,7 @@ export const logIn = async(email,password) => {
         })
 }
 
-export const addFinanceAccount = async(userId,accountName, accountBalance) => {
+export const addOrUpdateFinanceAccount = async(userId, accountName, accountBalance) => {
     console.log('name : ' + accountName + 'balance ' + accountBalance);
     return await DB.collection(userId).doc('FinanceAccounts').set({ [accountName]: accountBalance }, {merge : true})
         .then(response => {
@@ -41,3 +41,22 @@ export const getAllFinanceAccounts = async(userId) => {
     Object.keys(res).map((key)=>{acc.push({accountName : key, accountBalance : res[key]})});
     return acc;
 }
+
+export const addTransaction = (monthYear,userId, transactionInfo) => {
+    return DB.collection(userId).doc('Transactions').collection(monthYear).add(transactionInfo);
+}
+
+export const getAllTransactionsForMonth = async(userId, month_Year) => {
+    let transactionArray = [];
+    let res = await  DB.collection(userId).doc('Transactions').collection(month_Year).get();
+    res.forEach(transaction => {
+        let transactionObject = {
+            transactionId : transaction.id,
+            transactionData : {...transaction.data()}
+        }
+        transactionArray.push(transactionObject);
+    })
+    return transactionArray;
+}
+
+

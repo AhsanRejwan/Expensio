@@ -3,7 +3,7 @@ import classes from './AddAccountsPage.module.css'
 import {Button, Form,} from "react-bootstrap";
 import {AccountList} from "../../Components/UI/AccountList/AccountList";
 import {AuthContext} from "../../Components/Context/Auth-Context";
-import {addFinanceAccount} from "../../DataAccessManager/DataAccessManager";
+import {addOrUpdateFinanceAccount} from "../../DataAccessManager/DataAccessManager";
 import {NavLink} from "react-router-dom";
 
 export const AddAccountsPage = (props) => {
@@ -30,7 +30,7 @@ export const AddAccountsPage = (props) => {
         setInputAccountBalance('');
         setInputAccountName('');
         //let data = {accountName : inputAccountName , accountBalance :inputAccountBalance }
-        let response = await addFinanceAccount(authContext.userId, inputAccountName, inputAccountBalance);
+        let response = await addOrUpdateFinanceAccount(authContext.userId, inputAccountName, inputAccountBalance);
         props.addAccountsToList();
         console.log(response);
 
@@ -79,7 +79,7 @@ export const AddAccountsPage = (props) => {
 
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Current Balance*</Form.Label>
-                    <Form.Control required isInvalid={!inputBalanceValidity} type="number" placeholder="Enter Balance"
+                    <Form.Control required isInvalid={!inputBalanceValidity} type="number" min={'0'} placeholder="Enter Balance"
                                   onChange={event => inputChangedHandler(event, 'inputBalance')} value={inputAccountBalance}/>
                 </Form.Group>
                 <Form.Group>
