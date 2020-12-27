@@ -161,8 +161,8 @@ export const FinanceTable = (props) => {
                         variant={"danger"}
                         className={classes.Buttons}
                     >
-                        <NavLink to ='/Accounts'>
-                            Add Account
+                        <NavLink to ='/Accounts' className = {classes.Link}>
+                            Add Account/Funds
                         </NavLink>
                     </Button>
 

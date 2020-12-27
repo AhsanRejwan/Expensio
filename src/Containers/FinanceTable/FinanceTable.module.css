@@ -15,6 +15,7 @@
 .PlusButton {
     margin-left: 80vw;
     position: fixed;
+    bottom :120px
 
 }
 
@@ -25,4 +26,13 @@
 
 .Buttons {
     margin: 10px 0;
+}
+
+.Link {
+    color: #fff;
+}
+
+.Link:hover {
+    color: #ffffff;
+    text-decoration: none;
 }

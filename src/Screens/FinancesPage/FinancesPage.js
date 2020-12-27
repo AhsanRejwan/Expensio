@@ -1,5 +1,4 @@
-import React, {useContext, useEffect} from "react";
-import classes from './FinancesPage.module.css';
+import React, {useContext} from "react";
 
 import {AuthContext} from "../../Components/Context/Auth-Context";
 import {ModalContainer} from "../../Components/UI/ModalContainer/ModalContainer";
@@ -8,11 +7,7 @@ import {NavLink} from "react-router-dom";
 import {FinanceTable} from "../../Containers/FinanceTable/FinanceTable";
 
 export const FinancesPage = (props) => {
-    const authContext = useContext(AuthContext)
-
-    useEffect(()=>{
-        console.log(authContext.userId);
-    },[])
+    const authContext = useContext(AuthContext);
     return (
         <div >
 

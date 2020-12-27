@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import {Button, Form, Spinner} from "react-bootstrap";
-import {addOrUpdateFinanceAccount, signUp} from "../../../DataAccessManager/DataAccessManager";
+import {addOrUpdateFinanceAccount, getCurrentUser, signUp} from "../../../DataAccessManager/DataAccessManager";
 import {AuthContext} from "../../Context/Auth-Context";
 
 export const SignUpForm = (props) => {
